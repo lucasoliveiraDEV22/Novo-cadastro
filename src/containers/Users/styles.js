@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Background from "../../assets/Background.svg";
 
 export const Container = styled.div`
+  min-height: calc(100vh-170px);
   height: 100%;
   display: flex;
   flex-direction: column;

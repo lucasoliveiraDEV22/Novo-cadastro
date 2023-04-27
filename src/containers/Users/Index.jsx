@@ -9,17 +9,13 @@ import { useNavigate } from 'react-router-dom';
 
 function Users() {
   const [users, setUsers] = useState([]);
- 
-
-  // const users = [];
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     async function fetchUsers() {
-      
       const { data: newUsers } = await axios.get("http://localhost:3001/users");
       setUsers(newUsers);
-      const navigate = useNavigate();
-      console.log(navigate);
+
     }
     fetchUsers();
   }, []);
@@ -46,7 +42,7 @@ function Users() {
             </User>
           ))}
           
-          <Button>
+          <Button onClick={() => navigate("/")}>
             
             <img alt="seta" src={Arrow} />
             Voltar

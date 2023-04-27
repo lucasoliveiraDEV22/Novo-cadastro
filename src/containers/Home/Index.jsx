@@ -12,12 +12,13 @@ import {
 import { Link } from "react-router-dom";
 import People from "../../assets/people.svg";
 import Arrow from "../../assets/arrow.svg";
+import { useNavigate } from "react-router-dom";
 function Home() {
   const [users, setUsers] = useState([]);
   const inputName = useRef();
   const inputAge = useRef();
-  // const navigate = useNavigate();
-  // const users = [];
+  const navigate = useNavigate();
+
   async function addNewUser() {
     const { data: newUser } = await axios.post("http://localhost:3001/users/", {
       name: inputName.current.value,
@@ -26,7 +27,8 @@ function Home() {
 
     setUsers([...users, newUser]);
 
-    // navigate("/usuarios")
+  
+    navigate("/usuarios")
   }
 
   return (
@@ -38,12 +40,12 @@ function Home() {
         <Input placeholder="Nome" ref={inputName} />
         <InputLabel>Idade</InputLabel>
         <Input placeholder="Idade" ref={inputAge} />
-        <Link to="/usuarios">
+        
           <Button onClick={addNewUser}>
             Cadastrar
             <img alt="seta" src={Arrow} />
           </Button>
-        </Link>
+        
       </ContainerItems>
     </Container>
   );

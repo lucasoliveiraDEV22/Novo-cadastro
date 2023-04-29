@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, H1, Image, ContainerItems, Button, User } from "./styles";
+
+import H1 from '../../components/Title' 
+import ContainerItems from '../../components/ContainerItems'
+import Button from '../../components/Button'
+
+import { Container, Image,  User } from "./styles";
 import Avatar from "../../assets/avatar.svg";
 import Arrow from "../../assets/arrow.svg";
 import Trash from "../../assets/trash.svg";
 //import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+
 
 function Users() {
   const [users, setUsers] = useState([]);
@@ -28,7 +34,7 @@ function Users() {
   return (
     <Container>
       <Image alt="logo-imagem" src={Avatar} />
-      <ContainerItems>
+      <ContainerItems isBlur = {true}>
         <H1>Usuários</H1>
 
         <ul>
@@ -42,7 +48,7 @@ function Users() {
             </User>
           ))}
           
-          <Button onClick={() => navigate("/")}>
+          <Button isBack = {true} onClick={() => navigate("/")}>
             
             <img alt="seta" src={Arrow} />
             Voltar

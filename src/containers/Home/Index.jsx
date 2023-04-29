@@ -1,18 +1,22 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
+
+import H1 from '../../components/Title'
+import ContainerItems from '../../components/ContainerItems'
+import Button from '../../components/Button'
+
 import {
   Container,
-  H1,
   Image,
-  ContainerItems,
   InputLabel,
   Input,
-  Button,
 } from "./styles";
+
 import { Link } from "react-router-dom";
 import People from "../../assets/people.svg";
 import Arrow from "../../assets/arrow.svg";
 import { useNavigate } from "react-router-dom";
+
 function Home() {
   const [users, setUsers] = useState([]);
   const inputName = useRef();

@@ -29,7 +29,7 @@ function Users() {
     // console.log (userId)
     const newUsers = users.filter((user) => user.id !== userId);
     setUsers(newUsers);
-    await axios.delete(`https://first-project-node-rxak.vercel.app/users${userId}`);
+    await axios.delete(`https://first-project-node-rxak.vercel.app/users/${userId}`);
   }
   return (
     <Container>

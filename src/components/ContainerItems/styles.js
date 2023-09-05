@@ -12,7 +12,7 @@ export const ContainerItems = styled.div`
   height: 896px;
   display: flex;
   flex-direction: column;
-  padding: 50px 36px;
+  padding: 50px 36px;   
   border-radius: 61px 61px 0px 0px;
 
   ${(props) => props.isBlur && `
